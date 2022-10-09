@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap");
+
+// Colors
+$brightRed: #fc4747;
+$darkBlue: #10141e;
+$geryishBlue: #5a698f;
+$semiDarkBlue: #161d2f;
+$pureWhite: #ffffff;
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: $darkBlue;
+  color: $pureWhite;
+}
+
+.h1,
+h2,
+h3,
+h4 {
+  font-style: normal;
+}
+
+.h1 {
+  height: 40px;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.5px;
+}
+
+.h2 {
+  height: 30px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.h3 {
+  height: 30px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.h4 {
+  height: 23px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+}

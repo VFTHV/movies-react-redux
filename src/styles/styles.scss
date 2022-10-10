@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap");
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  ul {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
 // Colors
 $brightRed: #fc4747;
 $darkBlue: #10141e;
@@ -46,4 +59,93 @@ h4 {
   font-weight: 500;
   font-size: 18px;
   line-height: 23px;
+}
+
+.container {
+  padding-inline: 1rem;
+}
+
+.m-bl-1 {
+  margin-block: 1rem;
+}
+
+.m-bl-2 {
+  margin-block: 2rem;
+}
+
+.m-bl-3 {
+  margin-block: 3rem;
+}
+
+.p-bl-1 {
+  padding-block: 1rem;
+}
+
+.p-bl-2 {
+  padding-block: 2rem;
+}
+
+.p-bl-3 {
+  padding-block: 3rem;
+}
+
+.bg-sd-blue {
+  background-color: $semiDarkBlue;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  height: 3.5rem;
+
+  img {
+    height: 100%;
+  }
+
+  .nav-list {
+    display: flex;
+    li {
+      margin-inline: 0.7rem;
+      margin-block: 3px;
+    }
+  }
+}
+
+.avatar {
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.active-nav-icon {
+  path {
+    fill: white;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .main-container {
+    margin-left: 10rem;
+  }
+  .navigation {
+    flex-direction: column;
+    position: fixed;
+    height: calc(100vh - 4rem);
+    border-radius: 20px;
+    width: 6rem;
+    padding: 2rem;
+    margin: 2rem;
+
+    img {
+      width: 100%;
+      height: unset;
+    }
+    .nav-list {
+      flex-direction: column;
+      margin-bottom: auto;
+      margin-top: 4rem;
+      li {
+        margin-block: 1rem;
+      }
+    }
+  }
 }

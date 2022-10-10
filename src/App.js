@@ -1,42 +1,31 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
+// pages
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import Bookmarked from "./pages/Bookmarked";
 import TVSeries from "./pages/TVSeries";
-import Header from "./components/Header";
 import NotFound from "./pages/NotFound";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/movies",
-    element: <Movies />,
-  },
-  {
-    path: "/bookmarked",
-    element: <Bookmarked />,
-  },
-  {
-    path: "/tv-series",
-    element: <TVSeries />,
-  },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
-]);
+// components
+import Header from "./components/Header";
+import SearchInp from "./components/SearchInp";
 
 const App = () => {
   return (
-    <div className="container-fluid">
+    <>
       <Header />
-      <RouterProvider router={router} />
-    </div>
+      <div className="main-container">
+        <SearchInp />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/bookmarked" element={<Bookmarked />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/tvseries" element={<TVSeries />} />
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </>
   );
 };
 

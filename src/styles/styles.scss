@@ -122,6 +122,70 @@ h4 {
   }
 }
 
+.input-container {
+  display: flex;
+  height: 2rem;
+
+  .icon-container {
+    margin-right: 0.5rem;
+    padding-block: 0.2rem;
+    img {
+      height: 100%;
+    }
+  }
+
+  .search-inp {
+    background-color: $darkBlue;
+    border: none;
+    width: 100%;
+    padding-inline: 0.5rem;
+    color: $pureWhite;
+    font-size: 16px;
+    line-height: 20.16px;
+    &::placeholder {
+      color: rgba(255, 255, 255, $alpha: 0.5);
+    }
+  }
+}
+
+.movie-card {
+  width: 10.25rem;
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  ul {
+    display: flex;
+    list-style: disc;
+    li {
+      font-size: 11px;
+      font-weight: 300;
+      margin-inline: 0.65rem;
+    }
+    li:first-child {
+      list-style-type: none;
+      margin-left: 0;
+    }
+    .category-list-item {
+      display: flex;
+      span {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+.trending {
+  position: relative;
+  width: 15rem;
+
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    margin: 1rem;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .main-container {
     margin-left: 10rem;

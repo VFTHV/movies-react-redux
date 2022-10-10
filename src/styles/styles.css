@@ -121,6 +121,96 @@ h4 {
   fill: white;
 }
 
+.input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2rem;
+}
+
+.input-container .icon-container {
+  margin-right: 0.5rem;
+  padding-block: 0.2rem;
+}
+
+.input-container .icon-container img {
+  height: 100%;
+}
+
+.input-container .search-inp {
+  background-color: #10141e;
+  border: none;
+  width: 100%;
+  padding-inline: 0.5rem;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20.16px;
+}
+
+.input-container .search-inp::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-container .search-inp:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-container .search-inp::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-container .search-inp::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.movie-card {
+  width: 10.25rem;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.movie-card ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: disc;
+}
+
+.movie-card ul li {
+  font-size: 11px;
+  font-weight: 300;
+  margin-inline: 0.65rem;
+}
+
+.movie-card ul li:first-child {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.movie-card ul .category-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.movie-card ul .category-list-item span {
+  margin-left: 0.5rem;
+}
+
+.trending {
+  position: relative;
+  width: 15rem;
+}
+
+.trending .card-content {
+  position: absolute;
+  bottom: 0;
+  margin: 1rem;
+}
+
 @media only screen and (min-width: 1440px) {
   .main-container {
     margin-left: 10rem;

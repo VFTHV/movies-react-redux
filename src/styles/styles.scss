@@ -26,41 +26,6 @@ body {
   color: $pureWhite;
 }
 
-.h1,
-h2,
-h3,
-h4 {
-  font-style: normal;
-}
-
-.h1 {
-  height: 40px;
-  font-weight: 300;
-  font-size: 32px;
-  line-height: 40px;
-  letter-spacing: -0.5px;
-}
-
-.h2 {
-  height: 30px;
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 30px;
-}
-
-.h3 {
-  height: 30px;
-  font-weight: 500;
-  font-size: 24px;
-}
-
-.h4 {
-  height: 23px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 23px;
-}
-
 .container {
   padding-inline: 1rem;
 }
@@ -91,6 +56,41 @@ h4 {
 
 .bg-sd-blue {
   background-color: $semiDarkBlue;
+}
+
+.h1,
+h2,
+h3,
+h4 {
+  font-style: normal;
+}
+
+.h1 {
+  height: 25px;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.3125px;
+}
+
+.h2 {
+  height: 30px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.h3 {
+  height: 19px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.h4 {
+  height: 18px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .navigation {
@@ -150,6 +150,7 @@ h4 {
 
 .movie-card {
   width: 10.25rem;
+  position: relative;
   img {
     width: 100%;
     border-radius: 8px;
@@ -173,16 +174,48 @@ h4 {
       }
     }
   }
+  .bookmark {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    height: 2rem;
+    width: 2rem;
+    background-color: rgba(16, 20, 30, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .trending {
-  position: relative;
   width: 15rem;
 
   .card-content {
     position: absolute;
     bottom: 0;
     margin: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .h1 {
+    height: 40px;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+  }
+
+  .h3 {
+    height: 30px;
+    font-size: 24px;
+    line-height: 19px;
+  }
+  .h4 {
+    height: 23px;
+    font-size: 18px;
+    line-height: 23px;
   }
 }
 

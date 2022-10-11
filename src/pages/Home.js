@@ -1,12 +1,12 @@
 import React from "react";
-import MovieCard from "../components/MovieCard";
+import MovieList from "../components/MovieList";
+import TrendingList from "../components/TrendingList";
 
 const Home = () => {
   return (
     <div className="container">
-      <h2 className="h2">Trending</h2>
-
-      <MovieCard />
+      <TrendingList />
+      <MovieList />
     </div>
   );
 };

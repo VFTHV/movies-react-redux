@@ -122,6 +122,12 @@ h4 {
   }
 }
 
+.active {
+  path {
+    fill: white;
+  }
+}
+
 .input-container {
   display: flex;
   height: 2rem;

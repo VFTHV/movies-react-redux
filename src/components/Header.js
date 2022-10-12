@@ -1,6 +1,4 @@
 import React from "react";
-import { useState } from "react";
-
 import Logo from "../assets/logo.svg";
 import { ReactComponent as HomeLogo } from "../assets/icon-nav-home.svg";
 import { ReactComponent as MoviesLogo } from "../assets/icon-nav-movies.svg";
@@ -8,15 +6,9 @@ import { ReactComponent as MoviesLogo } from "../assets/icon-nav-movies.svg";
 import { ReactComponent as TvSeriesLogo } from "../assets/icon-nav-tv-series.svg";
 import { ReactComponent as BookmarkLogo } from "../assets/icon-nav-bookmark.svg";
 import imageAvatar from "../assets/image-avatar.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
-  const [active, setActive] = useState({});
-
-  const onActiveClass = (icon) => {
-    setActive({ [icon]: "active-nav-icon" });
-  };
-
   return (
     <header className="">
       <nav className="container p-bl-1 navigation bg-sd-blue">
@@ -25,24 +17,37 @@ const Header = () => {
         </div>
         <ul className="nav-list">
           <li>
-            <Link onClick={() => onActiveClass("home")} to="/">
-              <HomeLogo className={active.home} />
-            </Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/"
+              end
+            >
+              <HomeLogo />
+            </NavLink>
           </li>
           <li>
-            <Link onClick={() => onActiveClass("movies")} to="movies">
-              <MoviesLogo className={active.movies} />
-            </Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/movies"
+            >
+              <MoviesLogo />
+            </NavLink>
           </li>
           <li>
-            <Link onClick={() => onActiveClass("tvseries")} to="tvseries">
-              <TvSeriesLogo className={active.tvseries} />
-            </Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/tvseries"
+            >
+              <TvSeriesLogo />
+            </NavLink>
           </li>
           <li>
-            <Link onClick={() => onActiveClass("bookmarked")} to="bookmarked">
-              <BookmarkLogo className={active.bookmarked} />
-            </Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/bookmarked"
+            >
+              <BookmarkLogo />
+            </NavLink>
           </li>
         </ul>
         <div>

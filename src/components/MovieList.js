@@ -16,7 +16,7 @@ const MovieList = (props) => {
   console.log(props.movies);
 
   const renderList = () => {
-    if (!props.movies) return;
+    if (!props.movies || !Array.isArray(props.movies)) return;
 
     return (
       <ul className={props.isTrending ? "trending-list" : "movie-list"}>

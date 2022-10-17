@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import SearchIcon from "../assets/icon-search.svg";
+import SearchIcon from "../icons/icon-search.svg";
 
 const SearchInp = () => {
   const [input, setInput] = useState("");

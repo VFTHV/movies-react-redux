@@ -168,7 +168,7 @@ h4 {
 }
 
 .movie-card {
-  width: 10.25rem;
+  width: 164px;
   position: relative;
 }
 
@@ -234,6 +234,26 @@ h4 {
   margin: 1rem;
 }
 
+.movie-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
+}
+
+.trending-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  gap: 15px;
+}
+
 @media only screen and (min-width: 768px) {
   .h1 {
     height: 40px;
@@ -250,6 +270,9 @@ h4 {
     height: 23px;
     font-size: 18px;
     line-height: 23px;
+  }
+  .movie-card {
+    width: 220px;
   }
 }
 
@@ -283,6 +306,9 @@ h4 {
   }
   .navigation .nav-list li {
     margin-block: 1rem;
+  }
+  .movie-card {
+    width: 280px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

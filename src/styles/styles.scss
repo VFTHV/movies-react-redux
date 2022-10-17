@@ -155,7 +155,7 @@ h4 {
 }
 
 .movie-card {
-  width: 10.25rem;
+  width: 164px;
   position: relative;
   img {
     width: 100%;
@@ -205,6 +205,18 @@ h4 {
   }
 }
 
+.movie-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.trending-list {
+  display: flex;
+  overflow-x: scroll;
+  gap: 15px;
+}
+
 @media only screen and (min-width: 768px) {
   .h1 {
     height: 40px;
@@ -222,6 +234,9 @@ h4 {
     height: 23px;
     font-size: 18px;
     line-height: 23px;
+  }
+  .movie-card {
+    width: 220px;
   }
 }
 
@@ -250,5 +265,8 @@ h4 {
         margin-block: 1rem;
       }
     }
+  }
+  .movie-card {
+    width: 280px;
   }
 }

@@ -11,7 +11,16 @@ import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import SearchInp from "./components/SearchInp";
 
-const App = () => {
+// redux
+import { fetchAll } from "./actions";
+import { connect } from "react-redux";
+import { useEffect } from "react";
+
+const App = (props) => {
+  useEffect(() => {
+    props.fetchAll();
+  }, []);
+
   return (
     <>
       <Header />
@@ -28,5 +37,10 @@ const App = () => {
     </>
   );
 };
+const mapStateToProps = (state) => {
+  return {
+    movies: state.movies,
+  };
+};
 
-export default App;
+export default connect(mapStateToProps, { fetchAll })(App);

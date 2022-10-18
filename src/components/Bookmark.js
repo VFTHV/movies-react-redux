@@ -3,7 +3,7 @@ import { ReactComponent as BookmarkEmpty } from "../icons/icon-bookmark-empty.sv
 import { ReactComponent as BookmarkFull } from "../icons/icon-bookmark-full.svg";
 
 const Bookmark = (props) => {
-  return <>{props.bookmarked ? <BookmarkFull /> : <BookmarkEmpty />}</>;
+  return <>{props.isBookmarked ? <BookmarkFull /> : <BookmarkEmpty />}</>;
 };
 
 export default Bookmark;

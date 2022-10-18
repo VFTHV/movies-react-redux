@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as CategoryLogo } from "../icons/icon-category-movie.svg";
+import CategoryIcon from "./CategoryIcon";
 import Bookmark from "./Bookmark";
 
 const MovieCard = (props) => {
@@ -21,7 +21,7 @@ const MovieCard = (props) => {
           <li>{props.year}</li>
           <li>
             <div className="category-list-item">
-              <CategoryLogo />
+              <CategoryIcon category={props.category} />
               <span>{props.category}</span>
             </div>
           </li>
@@ -30,7 +30,7 @@ const MovieCard = (props) => {
         <h3 className={`${props.trending ? "h2" : "h3"}`}>{props.title}</h3>
       </div>
       <div className="bookmark">
-        <Bookmark bookmarked={props.isBookmarked} />
+        <Bookmark isBookmarked={props.isBookmarked} />
       </div>
     </div>
   );

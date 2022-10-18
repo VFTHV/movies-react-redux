@@ -10,10 +10,21 @@ const Bookmarked = (props) => {
   useEffect(() => {
     props.filterBookmarked();
   }, [props.movies]);
+
+  if (!Array.isArray(props.filtered)) return;
+
   return (
     <div className="container">
-      <h2 className="h1">Bookmarked</h2>
-      <MovieList movies={props.filtered} />
+      <h2 className="h1">Bookmarked Movies</h2>
+      <MovieList
+        movies={props.filtered.filter(({ category }) => category === "Movie")}
+      />
+      <h2 className="h1">Bookmarked TV Series</h2>
+      <MovieList
+        movies={props.filtered.filter(
+          ({ category }) => category === "TV Series"
+        )}
+      />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import CategoryIcon from "./CategoryIcon";
 import Bookmark from "./Bookmark";
+import { ReactComponent as IconPlay } from "../icons/icon-play.svg";
 
 const MovieCard = (props) => {
   // props needed: category, year, name, rating,
@@ -31,6 +32,12 @@ const MovieCard = (props) => {
       </div>
       <div className="bookmark">
         <Bookmark isBookmarked={props.isBookmarked} />
+      </div>
+      <div className="hover-event">
+        <div className="play-movie">
+          <IconPlay />
+          <h4>Play</h4>
+        </div>
       </div>
     </div>
   );

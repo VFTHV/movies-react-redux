@@ -155,13 +155,57 @@ h4 {
 }
 
 .movie-card {
-  width: 164px;
   position: relative;
   cursor: pointer;
-  img {
-    width: 100%;
+  width: 164px;
+
+  .card-media {
+    aspect-ratio: 1.49/1;
     border-radius: 8px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .hover-event {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $darkBlue;
+      opacity: 0.5;
+      display: none;
+
+      .play-movie {
+        padding: 0.5rem;
+        height: 3rem;
+        border-radius: 999px;
+        background-color: rgba(255, 255, 255, $alpha: 0.25);
+        display: flex;
+        align-items: center;
+        h4 {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .bookmark {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      cursor: pointer;
+
+      height: 2rem;
+      width: 2rem;
+      background-color: rgba(16, 20, 30, 0.5);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
+
   ul {
     display: flex;
     list-style: disc;
@@ -181,59 +225,14 @@ h4 {
       }
     }
   }
-  .bookmark {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    cursor: pointer;
-
-    height: 2rem;
-    width: 2rem;
-    background-color: rgba(16, 20, 30, 0.5);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &:hover {
-      background-color: $pureWhite;
-      path {
-        stroke: $darkBlue;
-      }
-    }
-  }
-  .hover-event {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: $darkBlue;
-    opacity: 0.5;
-    display: none;
-    // display: flex;
-    .play-movie {
-      padding: 0.5rem;
-      height: 3rem;
-      border-radius: 999px;
-      background-color: rgba(255, 255, 255, $alpha: 0.25);
-      display: flex;
-      align-items: center;
-      h4 {
-        margin-left: 1rem;
-      }
-    }
-  }
-  &:hover {
-    .hover-event {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
 }
 
 .trending {
-  width: 15rem;
+  width: 240px;
+
+  .card-media {
+    aspect-ratio: 1.71/1;
+  }
 
   .card-content {
     position: absolute;
@@ -257,6 +256,28 @@ h4 {
   }
 }
 
+@media (hover: hover) {
+  .movie-card {
+    .card-media {
+      &:hover {
+        .hover-event {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .bookmark {
+        &:hover {
+          background-color: $pureWhite;
+          path {
+            stroke: $darkBlue;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .h1 {
     height: 40px;
@@ -277,6 +298,16 @@ h4 {
   }
   .movie-card {
     width: 220px;
+    .card-media {
+      aspect-ratio: 1.57/1;
+    }
+  }
+  .trending {
+    width: 470px;
+
+    .card-media {
+      aspect-ratio: 2.04/1;
+    }
   }
 }
 
@@ -308,5 +339,9 @@ h4 {
   }
   .movie-card {
     width: 280px;
+
+    .card-media {
+      aspect-ratio: 1.61/1;
+    }
   }
 }

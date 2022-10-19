@@ -16,8 +16,22 @@ const MovieCard = (props) => {
 
   return (
     <div className={`movie-card ${props.isTrending ? "trending" : ""} m-bl-1`}>
-      <img src={smallImg} />
-      <div className="card-content">
+      <div
+        className="card-media"
+        style={{ backgroundImage: `url(${smallImg})` }}
+      >
+        <div className="hover-event">
+          <div className="play-movie">
+            <IconPlay />
+            <h4>Play</h4>
+          </div>
+        </div>
+        <div className="bookmark">
+          <Bookmark isBookmarked={props.isBookmarked} />
+        </div>
+      </div>
+      {/* <img src={smallImg} /> */}
+      <div className="card-content m-bl-1">
         <ul>
           <li>{props.year}</li>
           <li>
@@ -29,15 +43,6 @@ const MovieCard = (props) => {
           <li>{props.rating}</li>
         </ul>
         <h3 className={`${props.trending ? "h2" : "h3"}`}>{props.title}</h3>
-      </div>
-      <div className="bookmark">
-        <Bookmark isBookmarked={props.isBookmarked} />
-      </div>
-      <div className="hover-event">
-        <div className="play-movie">
-          <IconPlay />
-          <h4>Play</h4>
-        </div>
       </div>
     </div>
   );

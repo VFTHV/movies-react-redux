@@ -168,14 +168,65 @@ h4 {
 }
 
 .movie-card {
-  width: 164px;
   position: relative;
   cursor: pointer;
+  width: 164px;
 }
 
-.movie-card img {
-  width: 100%;
+.movie-card .card-media {
+  aspect-ratio: 1.49/1;
   border-radius: 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.movie-card .card-media .hover-event {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #10141e;
+  opacity: 0.5;
+  display: none;
+}
+
+.movie-card .card-media .hover-event .play-movie {
+  padding: 0.5rem;
+  height: 3rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.movie-card .card-media .hover-event .play-movie h4 {
+  margin-left: 1rem;
+}
+
+.movie-card .card-media .bookmark {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  background-color: rgba(16, 20, 30, 0.5);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .movie-card ul {
@@ -206,76 +257,12 @@ h4 {
   margin-left: 0.5rem;
 }
 
-.movie-card .bookmark {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  cursor: pointer;
-  height: 2rem;
-  width: 2rem;
-  background-color: rgba(16, 20, 30, 0.5);
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.movie-card .bookmark:hover {
-  background-color: #ffffff;
-}
-
-.movie-card .bookmark:hover path {
-  stroke: #10141e;
-}
-
-.movie-card .hover-event {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #10141e;
-  opacity: 0.5;
-  display: none;
-}
-
-.movie-card .hover-event .play-movie {
-  padding: 0.5rem;
-  height: 3rem;
-  border-radius: 999px;
-  background-color: rgba(255, 255, 255, 0.25);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.movie-card .hover-event .play-movie h4 {
-  margin-left: 1rem;
-}
-
-.movie-card:hover .hover-event {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .trending {
-  width: 15rem;
+  width: 240px;
+}
+
+.trending .card-media {
+  aspect-ratio: 1.71/1;
 }
 
 .trending .card-content {
@@ -308,6 +295,26 @@ h4 {
   display: none;
 }
 
+@media (hover: hover) {
+  .movie-card .card-media:hover .hover-event {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .movie-card .card-media .bookmark:hover {
+    background-color: #ffffff;
+  }
+  .movie-card .card-media .bookmark:hover path {
+    stroke: #10141e;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .h1 {
     height: 40px;
@@ -327,6 +334,15 @@ h4 {
   }
   .movie-card {
     width: 220px;
+  }
+  .movie-card .card-media {
+    aspect-ratio: 1.57/1;
+  }
+  .trending {
+    width: 470px;
+  }
+  .trending .card-media {
+    aspect-ratio: 2.04/1;
   }
 }
 
@@ -363,6 +379,9 @@ h4 {
   }
   .movie-card {
     width: 280px;
+  }
+  .movie-card .card-media {
+    aspect-ratio: 1.61/1;
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -38,7 +38,7 @@ export const filterTrendingAndRecommended = () => (dispatch, getState) => {
   const allRecords = getState().movies.record;
   const trending = allRecords.filter((movie) => Boolean(movie.isTrending));
   const recommended = allRecords.filter((movie) => Boolean(!movie.isTrending));
-  const both = { trending, recommended };
+  const both = [...trending, ...recommended];
 
   dispatch({ type: actions.filterTrendingAndRecommended, payload: both });
 };

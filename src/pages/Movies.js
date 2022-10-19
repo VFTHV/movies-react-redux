@@ -4,17 +4,35 @@ import MovieList from "../components/MovieList";
 
 import { filterMovies } from "../actions";
 import { connect } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import SearchInp from "../components/SearchInp";
 
 const Movies = (props) => {
+  const [query, setQuery] = useState("");
   useEffect(() => {
     props.filterMovies();
   }, [props.movies]);
 
+  const filteredItems = props.filtered.filter((movie) =>
+    movie.title.toLowerCase().includes(query.toLowerCase())
+  );
+
+  const renderSearch = () => {
+    let header = `Found ${filteredItems.length} for "${query}"`;
+    if (filteredItems.length === 0) {
+      return <h2 className="h1">Nothing found for "{query}"</h2>;
+    }
+    return <MovieList movies={filteredItems} header={header} />;
+  };
+
   return (
     <div className="container">
-      <h2 className="h1">Movies</h2>
-      <MovieList movies={props.filtered} />
+      <SearchInp setQuery={setQuery} placeholder="Search for Movies" />
+      {query === "" ? (
+        <MovieList movies={props.filtered} header="Movies" />
+      ) : (
+        renderSearch()
+      )}
     </div>
   );
 };

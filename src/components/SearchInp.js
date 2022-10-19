@@ -1,27 +1,45 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchIcon from "../icons/icon-search.svg";
 
-const SearchInp = () => {
-  const [input, setInput] = useState("");
+const SearchInp = (props) => {
+  const [term, setTerm] = useState("");
+  const [debouncedTerm, setDebouncedTerm] = useState("");
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedTerm(term);
+    }, 500);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [term]);
+
+  useEffect(() => {
+    props.setQuery(debouncedTerm);
+  }, [debouncedTerm]);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    props.setQuery(term);
+  };
 
   return (
-    <div className="container">
-      <form className="p-bl-1">
-        <div className="input-container">
-          <div className="icon-container">
-            <img src={SearchIcon} />
-          </div>
-          <input
-            className="search-inp"
-            type="text"
-            placeholder="Search for movies or TV series"
-            onChange={(e) => setInput(e.target.value)}
-            value={input}
-          />
+    <form className="p-bl-1" onSubmit={onSubmit}>
+      <div className="input-container">
+        <div className="icon-container">
+          <img src={SearchIcon} />
         </div>
-      </form>
-    </div>
+        <input
+          className="search-inp"
+          type="text"
+          placeholder={props.placeholder}
+          onChange={(e) => setTerm(e.target.value)}
+          value={term}
+        />
+      </div>
+    </form>
   );
 };
 

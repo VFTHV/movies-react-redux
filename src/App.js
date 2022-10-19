@@ -25,7 +25,6 @@ const App = (props) => {
     <>
       <Header />
       <div className="main-container">
-        <SearchInp />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bookmarked" element={<Bookmarked />} />

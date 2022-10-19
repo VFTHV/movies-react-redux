@@ -42,7 +42,7 @@ const MovieCard = (props) => {
           </li>
           <li>{props.rating}</li>
         </ul>
-        <h3 className={`${props.trending ? "h2" : "h3"}`}>{props.title}</h3>
+        <h3 className={`${props.isTrending ? "h2" : "h3"}`}>{props.title}</h3>
       </div>
     </div>
   );

@@ -10,17 +10,16 @@ const MovieList = (props) => {
         <h2 className="h1">{props.header}</h2>
         <ul className={props.isTrending ? "trending-list" : "movie-list"}>
           {props.movies.map((movie) => (
-            <li key={movie.title}>
-              <MovieCard
-                title={movie.title}
-                year={movie.year}
-                rating={movie.rating}
-                category={movie.category}
-                isBookmarked={movie.isBookmarked}
-                thumbnail={movie.thumbnail}
-                isTrending={props.isTrending}
-              />
-            </li>
+            <MovieCard
+              key={movie.title}
+              title={movie.title}
+              year={movie.year}
+              rating={movie.rating}
+              category={movie.category}
+              isBookmarked={movie.isBookmarked}
+              thumbnail={movie.thumbnail}
+              isTrending={props.isTrending}
+            />
           ))}
         </ul>
       </>

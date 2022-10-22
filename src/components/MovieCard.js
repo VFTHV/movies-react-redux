@@ -15,36 +15,40 @@ const MovieCard = (props) => {
   const smallImg = image.small.substr(2);
 
   return (
-    <div className={`movie-card ${props.isTrending ? "trending" : ""} m-bl-1`}>
+    <li>
       <div
-        className="card-media"
-        style={{ backgroundImage: `url(${smallImg})` }}
+        className={`movie-card ${props.isTrending ? "trending" : ""} m-bl-1`}
       >
-        <div className="hover-event">
-          <div className="play-movie">
-            <IconPlay />
-            <h4>Play</h4>
+        <div
+          className="card-media"
+          style={{ backgroundImage: `url(${smallImg})` }}
+        >
+          <div className="hover-event">
+            <div className="play-movie">
+              <IconPlay />
+              <h4>Play</h4>
+            </div>
+          </div>
+          <div className="bookmark">
+            <Bookmark isBookmarked={props.isBookmarked} />
           </div>
         </div>
-        <div className="bookmark">
-          <Bookmark isBookmarked={props.isBookmarked} />
+        {/* <img src={smallImg} /> */}
+        <div className="card-content m-bl-1">
+          <ul>
+            <li>{props.year}</li>
+            <li>
+              <div className="category-list-item">
+                <CategoryIcon category={props.category} />
+                <span>{props.category}</span>
+              </div>
+            </li>
+            <li>{props.rating}</li>
+          </ul>
+          <h3 className={`${props.isTrending ? "h2" : "h3"}`}>{props.title}</h3>
         </div>
       </div>
-      {/* <img src={smallImg} /> */}
-      <div className="card-content m-bl-1">
-        <ul>
-          <li>{props.year}</li>
-          <li>
-            <div className="category-list-item">
-              <CategoryIcon category={props.category} />
-              <span>{props.category}</span>
-            </div>
-          </li>
-          <li>{props.rating}</li>
-        </ul>
-        <h3 className={`${props.isTrending ? "h2" : "h3"}`}>{props.title}</h3>
-      </div>
-    </div>
+    </li>
   );
 };
 

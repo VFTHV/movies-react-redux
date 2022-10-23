@@ -4,15 +4,14 @@ import Bookmark from "./Bookmark";
 import { ReactComponent as IconPlay } from "../icons/icon-play.svg";
 
 const MovieCard = (props) => {
-  // props needed: category, year, name, rating,
-  // do srcset for pictures
-  // if isTrending then picture must render thumbnail.trending from object
-
   const image = props.isTrending
     ? props.thumbnail.trending
     : props.thumbnail.regular;
 
-  const smallImg = image.small.substr(2);
+  const bgrndImg =
+    props.windowWidth < 768 ? image.small.substr(2) : image.large.substr(2);
+
+  console.log(bgrndImg);
 
   return (
     <li>
@@ -21,7 +20,7 @@ const MovieCard = (props) => {
       >
         <div
           className="card-media"
-          style={{ backgroundImage: `url(${smallImg})` }}
+          style={{ backgroundImage: `url(${bgrndImg})` }}
         >
           <div className="hover-event">
             <div className="play-movie">
@@ -38,7 +37,7 @@ const MovieCard = (props) => {
           <ul>
             <li>{props.year}</li>
             <li className="category-list-item">
-              <CategoryIcon category={props.category} />
+              <CategoryIcon className="cat-logo" category={props.category} />
               <span>{props.category}</span>
             </li>
             <li>{props.rating}</li>

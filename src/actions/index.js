@@ -12,7 +12,6 @@ export const fetchAll = () => async (dispatch) => {
 
 export const bookmarkMovie = (title) => async (dispatch, getState) => {
   // get all the state
-  console.log(getState());
   const allMovies = getState().movies;
   // get index of the item that has this TITLE
   const index = allMovies.record.findIndex((object) => object.title === title);

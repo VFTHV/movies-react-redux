@@ -238,6 +238,7 @@ h4 {
   ul {
     display: flex;
     align-items: center;
+    height: 1rem;
     list-style: disc;
     li {
       font-size: 11px;
@@ -249,8 +250,6 @@ h4 {
       margin-left: 0;
     }
     .category-list-item {
-      // display: flex;
-      // align-items: center;
       span {
         margin-left: 0.5rem;
       }

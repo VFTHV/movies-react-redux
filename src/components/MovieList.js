@@ -1,7 +1,9 @@
 import React from "react";
 import MovieCard from "./MovieCard";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const MovieList = (props) => {
+  const { width } = useWindowDimensions();
   const renderList = () => {
     if (props.movies.length === 0) return;
 
@@ -19,6 +21,7 @@ const MovieList = (props) => {
               isBookmarked={movie.isBookmarked}
               thumbnail={movie.thumbnail}
               isTrending={props.isTrending}
+              windowWidth={width}
             />
           ))}
         </ul>

@@ -19,7 +19,7 @@ const App = (props) => {
   useEffect(() => {
     props.fetchAll();
   }, []);
-  console.log("render App");
+
   return (
     <>
       <Header />

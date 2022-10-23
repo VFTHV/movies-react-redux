@@ -7,13 +7,13 @@ import { connect } from "react-redux";
 import { useEffect, useState } from "react";
 import SearchInp from "../components/SearchInp";
 
-const Movies = (props) => {
+const Movies = ({ filterMovies, movies, filtered }) => {
   const [query, setQuery] = useState("");
   useEffect(() => {
-    props.filterMovies();
-  }, [props.movies]);
+    filterMovies();
+  }, [movies]);
 
-  const filteredItems = props.filtered.filter((movie) =>
+  const filteredItems = filtered.filter((movie) =>
     movie.title.toLowerCase().includes(query.toLowerCase())
   );
 
@@ -29,7 +29,7 @@ const Movies = (props) => {
     <div className="container">
       <SearchInp setQuery={setQuery} placeholder="Search for Movies" />
       {query === "" ? (
-        <MovieList movies={props.filtered} header="Movies" />
+        <MovieList movies={filtered} header="Movies" />
       ) : (
         renderSearch()
       )}

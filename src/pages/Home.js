@@ -5,29 +5,29 @@ import { connect } from "react-redux";
 import { filterTrendingAndRecommended } from "../actions";
 import SearchInp from "../components/SearchInp";
 
-const Home = (props) => {
+const Home = ({ filterTrendingAndRecommended, movies, filtered }) => {
   const [query, setQuery] = useState("");
   useEffect(() => {
-    props.filterTrendingAndRecommended();
-  }, [props.movies]);
+    filterTrendingAndRecommended();
+  }, [movies]);
 
   const renderLists = () => {
     return (
       <>
         <MovieList
-          movies={props.filtered.filter((i) => i.isTrending)}
+          movies={filtered.filter((i) => i.isTrending)}
           header="Trending"
           isTrending
         />
         <MovieList
-          movies={props.filtered.filter((i) => !i.isTrending)}
+          movies={filtered.filter((i) => !i.isTrending)}
           header="Recommended for you"
         />
       </>
     );
   };
 
-  const filteredItems = props.filtered.filter((movie) =>
+  const filteredItems = filtered.filter((movie) =>
     movie.title.toLowerCase().includes(query.toLowerCase())
   );
 

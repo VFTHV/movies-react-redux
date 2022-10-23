@@ -4,20 +4,25 @@ import Bookmark from "./Bookmark";
 import { ReactComponent as IconPlay } from "../icons/icon-play.svg";
 
 const MovieCard = (props) => {
-  const image = props.isTrending
-    ? props.thumbnail.trending
-    : props.thumbnail.regular;
+  const {
+    isTrending,
+    thumbnail,
+    windowWidth,
+    isBookmarked,
+    title,
+    year,
+    rating,
+    category,
+  } = props;
+
+  const image = isTrending ? thumbnail.trending : thumbnail.regular;
 
   const bgrndImg =
-    props.windowWidth < 768 ? image.small.substr(2) : image.large.substr(2);
-
-  console.log(bgrndImg);
+    windowWidth < 768 ? image.small.substr(2) : image.large.substr(2);
 
   return (
     <li>
-      <div
-        className={`movie-card ${props.isTrending ? "trending" : ""} m-bl-1`}
-      >
+      <div className={`movie-card ${isTrending ? "trending" : ""} m-bl-1`}>
         <div
           className="card-media"
           style={{ backgroundImage: `url(${bgrndImg})` }}
@@ -29,20 +34,20 @@ const MovieCard = (props) => {
             </div>
           </div>
           <div className="bookmark">
-            <Bookmark isBookmarked={props.isBookmarked} title={props.title} />
+            <Bookmark isBookmarked={isBookmarked} title={title} />
           </div>
         </div>
 
         <div className="card-content m-bl-1">
           <ul>
-            <li>{props.year}</li>
+            <li>{year}</li>
             <li className="category-list-item">
-              <CategoryIcon className="cat-logo" category={props.category} />
-              <span>{props.category}</span>
+              <CategoryIcon className="cat-logo" category={category} />
+              <span>{category}</span>
             </li>
-            <li>{props.rating}</li>
+            <li>{rating}</li>
           </ul>
-          <h3 className={`${props.isTrending ? "h2" : "h3"}`}>{props.title}</h3>
+          <h3 className={`${isTrending ? "h2" : "h3"}`}>{title}</h3>
         </div>
       </div>
     </li>

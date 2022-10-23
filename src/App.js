@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+
 // pages
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
@@ -15,9 +16,9 @@ import { fetchAll } from "./actions";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 
-const App = (props) => {
+const App = ({ fetchAll }) => {
   useEffect(() => {
-    props.fetchAll();
+    fetchAll();
   }, []);
 
   return (

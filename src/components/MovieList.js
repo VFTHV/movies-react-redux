@@ -2,16 +2,16 @@ import React from "react";
 import MovieCard from "./MovieCard";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 
-const MovieList = (props) => {
+const MovieList = ({ movies, header, isTrending }) => {
   const { width } = useWindowDimensions();
   const renderList = () => {
-    if (props.movies.length === 0) return;
+    if (movies.length === 0) return;
 
     return (
       <>
-        <h2 className="h1">{props.header}</h2>
-        <ul className={props.isTrending ? "trending-list" : "movie-list"}>
-          {props.movies.map((movie) => (
+        <h2 className="h1">{header}</h2>
+        <ul className={isTrending ? "trending-list" : "movie-list"}>
+          {movies.map((movie) => (
             <MovieCard
               key={movie.title}
               title={movie.title}
@@ -20,7 +20,7 @@ const MovieList = (props) => {
               category={movie.category}
               isBookmarked={movie.isBookmarked}
               thumbnail={movie.thumbnail}
-              isTrending={props.isTrending}
+              isTrending={isTrending}
               windowWidth={width}
             />
           ))}

@@ -7,30 +7,28 @@ import { filterBookmarked } from "../actions";
 import { connect } from "react-redux";
 import { useEffect, useState } from "react";
 
-const Bookmarked = (props) => {
+const Bookmarked = ({ filterBookmarked, movies, filtered }) => {
   const [query, setQuery] = useState("");
   useEffect(() => {
-    props.filterBookmarked();
-  }, [props.movies]);
+    filterBookmarked();
+  }, [movies]);
 
   const renderLists = () => {
     return (
       <>
         <MovieList
-          movies={props.filtered.filter(({ category }) => category === "Movie")}
+          movies={filtered.filter(({ category }) => category === "Movie")}
           header="Bookmarked Movies"
         />
         <MovieList
-          movies={props.filtered.filter(
-            ({ category }) => category === "TV Series"
-          )}
+          movies={filtered.filter(({ category }) => category === "TV Series")}
           header="Bookmarked TV Series"
         />
       </>
     );
   };
 
-  const filteredItems = props.filtered.filter((movie) =>
+  const filteredItems = filtered.filter((movie) =>
     movie.title.toLowerCase().includes(query.toLowerCase())
   );
 

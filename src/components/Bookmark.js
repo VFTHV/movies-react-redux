@@ -5,15 +5,15 @@ import { ReactComponent as BookmarkFull } from "../icons/icon-bookmark-full.svg"
 import { bookmarkMovie } from "../actions";
 import { connect } from "react-redux";
 
-const Bookmark = (props) => {
+const Bookmark = ({ title, bookmarkMovie, isBookmarked }) => {
   return (
     <div
       onClick={(e) => {
-        props.bookmarkMovie(props.title);
+        bookmarkMovie(title);
         e.stopPropagation();
       }}
     >
-      {props.isBookmarked ? <BookmarkFull /> : <BookmarkEmpty />}
+      {isBookmarked ? <BookmarkFull /> : <BookmarkEmpty />}
     </div>
   );
 };

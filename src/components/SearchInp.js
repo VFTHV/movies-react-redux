@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import SearchIcon from "../icons/icon-search.svg";
 
-const SearchInp = (props) => {
+const SearchInp = ({ setQuery, placeholder }) => {
   const [term, setTerm] = useState("");
   const [debouncedTerm, setDebouncedTerm] = useState("");
 
@@ -17,12 +17,12 @@ const SearchInp = (props) => {
   }, [term]);
 
   useEffect(() => {
-    props.setQuery(debouncedTerm);
+    setQuery(debouncedTerm);
   }, [debouncedTerm]);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    props.setQuery(term);
+    setQuery(term);
   };
 
   return (
@@ -34,7 +34,7 @@ const SearchInp = (props) => {
         <input
           className="search-inp"
           type="text"
-          placeholder={props.placeholder}
+          placeholder={placeholder}
           onChange={(e) => setTerm(e.target.value)}
           value={term}
         />

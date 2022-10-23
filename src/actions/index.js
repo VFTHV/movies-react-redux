@@ -1,11 +1,29 @@
-import videos from "../apis/movies_api";
+import { axiosFetch, axiosPut } from "../apis/movies_api";
+import actionTypes from "./actionTypes";
 import actions from "./actionTypes";
 
 // get data
 
 export const fetchAll = () => async (dispatch) => {
-  const response = await videos.get("/");
+  const response = await axiosFetch.get("/18");
+
   dispatch({ type: actions.fetchAll, payload: response.data });
+};
+
+export const bookmarkMovie = (title) => async (dispatch, getState) => {
+  // get all the state
+  console.log(getState());
+  const allMovies = getState().movies;
+  // get index of the item that has this TITLE
+  const index = allMovies.record.findIndex((object) => object.title === title);
+  // define the alternate boolean
+  const bookmarkBoolean = allMovies.record[index].isBookmarked ? false : true;
+  // bookmark or unBookmark the item
+  allMovies.record[index].isBookmarked = bookmarkBoolean;
+  // put the whole data into payload
+  const response = await axiosPut.put("/", JSON.stringify(allMovies.record));
+
+  dispatch({ type: actionTypes.bookmark_movie, payload: allMovies });
 };
 
 export const filterMovies = () => (dispatch, getState) => {

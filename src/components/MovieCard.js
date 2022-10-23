@@ -30,10 +30,10 @@ const MovieCard = (props) => {
             </div>
           </div>
           <div className="bookmark">
-            <Bookmark isBookmarked={props.isBookmarked} />
+            <Bookmark isBookmarked={props.isBookmarked} title={props.title} />
           </div>
         </div>
-        {/* <img src={smallImg} /> */}
+
         <div className="card-content m-bl-1">
           <ul>
             <li>{props.year}</li>

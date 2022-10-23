@@ -9,7 +9,6 @@ import NotFound from "./pages/NotFound";
 
 // components
 import Header from "./components/Header";
-import SearchInp from "./components/SearchInp";
 
 // redux
 import { fetchAll } from "./actions";
@@ -20,7 +19,7 @@ const App = (props) => {
   useEffect(() => {
     props.fetchAll();
   }, []);
-
+  console.log("render App");
   return (
     <>
       <Header />

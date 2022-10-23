@@ -3,11 +3,11 @@
 // const updateData = async () => {
 //   const response = await fetch(URL3, {
 //     method: "PUT",
-//     headers: {
-//       "Content-Type": "application/json",
-//       "X-Master-Key":
-//         "$2b$10$ul3zB50rJgVzCJoxcuIXqOQleBWxSxOOSNWlXRAQqvyJEbaGkt7tC",
-//     },
+// headers: {
+//   "Content-Type": "application/json",
+//   "X-Master-Key":
+//     "$2b$10$ul3zB50rJgVzCJoxcuIXqOQleBWxSxOOSNWlXRAQqvyJEbaGkt7tC",
+// },
 //     body: JSON.stringify(updateObj),
 //   });
 //   const data = await response.json();
@@ -36,6 +36,16 @@
 
 import axios from "axios";
 
-export default axios.create({
+const headers = {
+  "Content-Type": "application/json",
+  "X-Master-Key":
+    "$2b$10$ul3zB50rJgVzCJoxcuIXqOQleBWxSxOOSNWlXRAQqvyJEbaGkt7tC",
+};
+
+export const axiosFetch = axios.create({
   baseURL: "https://api.jsonbin.io/v3/b/6344a7fe65b57a31e691fee5",
+});
+export const axiosPut = axios.create({
+  baseURL: "https://api.jsonbin.io/v3/b/6344a7fe65b57a31e691fee5",
+  headers,
 });

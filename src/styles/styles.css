@@ -279,12 +279,6 @@ h4 {
   margin-left: 0;
 }
 
-.movie-card ul .category-list-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .movie-card ul .category-list-item span {
   margin-left: 0.5rem;
 }

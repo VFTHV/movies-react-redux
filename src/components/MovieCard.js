@@ -37,11 +37,9 @@ const MovieCard = (props) => {
         <div className="card-content m-bl-1">
           <ul>
             <li>{props.year}</li>
-            <li>
-              <div className="category-list-item">
-                <CategoryIcon category={props.category} />
-                <span>{props.category}</span>
-              </div>
+            <li className="category-list-item">
+              <CategoryIcon category={props.category} />
+              <span>{props.category}</span>
             </li>
             <li>{props.rating}</li>
           </ul>

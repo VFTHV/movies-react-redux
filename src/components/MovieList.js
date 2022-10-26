@@ -9,8 +9,14 @@ const MovieList = ({ movies, header, isTrending }) => {
 
     return (
       <>
-        <h2 className="h1">{header}</h2>
-        <ul className={isTrending ? "trending-list" : "movie-list"}>
+        <h1 aria-label="movie list header" className="h1">
+          {header}
+        </h1>
+        <ul
+          aria-label="movie list"
+          className={isTrending ? "trending-list" : "movie-list"}
+          tabIndex={isTrending ? 0 : ""}
+        >
           {movies.map((movie) => (
             <MovieCard
               key={movie.title}

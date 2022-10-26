@@ -14,11 +14,12 @@ const Header = () => {
     <header>
       <nav className="container p-bl-1 navigation bg-sd-blue">
         <div>
-          <img src={Logo} />
+          <img src={Logo} alt="logo image" />
         </div>
-        <ul className="nav-list">
+        <ul className="nav-list" aria-label="navigation bar">
           <li>
             <NavLink
+              aria-label="navigation link"
               className={({ isActive }) => (isActive ? "active" : "")}
               to="/"
               end
@@ -28,6 +29,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
+              aria-label="navigation link"
               className={({ isActive }) => (isActive ? "active" : "")}
               to="/movies"
             >
@@ -36,6 +38,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
+              aria-label="navigation link"
               className={({ isActive }) => (isActive ? "active" : "")}
               to="/tvseries"
             >
@@ -44,6 +47,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
+              aria-label="navigation link"
               className={({ isActive }) => (isActive ? "active" : "")}
               to="/bookmarked"
             >
@@ -52,7 +56,7 @@ const Header = () => {
           </li>
         </ul>
         <div>
-          <img className="avatar" src={imageAvatar} />
+          <img className="avatar" src={imageAvatar} alt="avatar image" />
         </div>
       </nav>
     </header>

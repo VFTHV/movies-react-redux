@@ -24,7 +24,7 @@ const App = ({ fetchAll }) => {
   return (
     <>
       <Header />
-      <div className="main-container">
+      <main className="main-container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bookmarked" element={<Bookmarked />} />
@@ -32,7 +32,7 @@ const App = ({ fetchAll }) => {
           <Route path="/tvseries" element={<TVSeries />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
-      </div>
+      </main>
     </>
   );
 };

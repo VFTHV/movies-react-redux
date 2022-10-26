@@ -26,12 +26,13 @@ const SearchInp = ({ setQuery, placeholder }) => {
   };
 
   return (
-    <form className="p-bl-1" onSubmit={onSubmit}>
+    <form aria-label="movie search bar" className="p-bl-1" onSubmit={onSubmit}>
       <div className="input-container">
         <div className="icon-container">
-          <img src={SearchIcon} />
+          <img src={SearchIcon} aria-label="search icon" />
         </div>
         <input
+          aria-label="search input"
           className="search-inp"
           type="text"
           placeholder={placeholder}

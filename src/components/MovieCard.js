@@ -21,7 +21,7 @@ const MovieCard = (props) => {
     windowWidth < 768 ? image.small.substr(2) : image.large.substr(2);
 
   return (
-    <li>
+    <li aria-label="movie card">
       <div className={`movie-card ${isTrending ? "trending" : ""} m-bl-1`}>
         <div
           className="card-media"
@@ -39,15 +39,20 @@ const MovieCard = (props) => {
         </div>
 
         <div className="card-content m-bl-1">
-          <ul>
-            <li>{year}</li>
-            <li className="category-list-item">
+          <ul aria-label="movie description list">
+            <li aria-label="movie description: year">{year}</li>
+            <li
+              aria-label="movie description: category"
+              className="category-list-item"
+            >
               <CategoryIcon className="cat-logo" category={category} />
-              <span>{category}</span>
+              <span aria-label="category">{category}</span>
             </li>
-            <li>{rating}</li>
+            <li aria-label="movie description: rating">{rating}</li>
           </ul>
-          <h3 className={`${isTrending ? "h2" : "h3"}`}>{title}</h3>
+          <h2 aria-label="title" className={`${isTrending ? "h2" : "h3"}`}>
+            {title}
+          </h2>
         </div>
       </div>
     </li>

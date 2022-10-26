@@ -32,12 +32,12 @@ Users should be able to:
 
 ### Screenshot
 
-![movies screenshot](https://user-images.githubusercontent.com/101958139/197913701-a8f7b630-cdab-4a10-9a63-215701f368a4.png)
+![movies app screenshot](https://user-images.githubusercontent.com/101958139/197913701-a8f7b630-cdab-4a10-9a63-215701f368a4.png)
 
 
 ### Links
 
-- Live Site URL: [Rest Countries React Redux](https://master--ent-web-app-react-redux.netlify.app)
+- Live Site URL: [Movies React Redux](https://master--ent-web-app-react-redux.netlify.app)
 
 ## My process
 
